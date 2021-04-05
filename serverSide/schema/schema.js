@@ -21,3 +21,22 @@ const BookType = new GraphQLObjectType({
 
     })
 })
+
+const RootQuery = new GraphQLObjectType({
+    name: 'RootType',
+    fields: {
+        book: {
+            type: BookType,
+            args: {
+                id: {
+                    type: GraphQLString
+                }
+            },
+            resolve(parent, args) {}
+        }
+    }
+})
+
+module.exports = new GraphQLSchema({
+    query: RootQuery
+});
