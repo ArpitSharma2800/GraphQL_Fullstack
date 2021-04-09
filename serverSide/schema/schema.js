@@ -9,6 +9,7 @@ const {
     GraphQLID,
     GraphQLList
 } = require('graphql');
+const Book = require('../models/book');
 
 const BookType = new GraphQLObjectType({
     name: 'Book',
@@ -127,6 +128,28 @@ const Mutation = new GraphQLObjectType({
                     age: args.age
                 });
                 return author.save();
+            }
+        },
+        addBook: {
+            type: BookType,
+            args: {
+                name: {
+                    type: GraphQLString
+                },
+                genre: {
+                    type: GraphQLString
+                },
+                authorId: {
+                    type: GraphQLID
+                }
+            },
+            resolve(parent, args) {
+                let book = new Book({
+                    name: args.name,
+                    genre: args.genre,
+                    authorId: args.authorId
+                });
+                return book.save();
             }
         }
     }
