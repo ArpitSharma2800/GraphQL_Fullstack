@@ -6,7 +6,7 @@ const schema = require('./schema/schema');
 const mongoose = require('mongoose');
 const app = express();
 
-mongoose.connect("XXXXX", {
+mongoose.connect("XXXX", {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
