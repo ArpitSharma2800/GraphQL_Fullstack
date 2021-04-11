@@ -6,7 +6,7 @@ const schema = require('./schema/schema');
 const mongoose = require('mongoose');
 const app = express();
 
-mongoose.connect("XXXX", {
+mongoose.connect("mongodb+srv://arpit:iluvmuma@arpit-xcm5n.gcp.mongodb.net/test?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
