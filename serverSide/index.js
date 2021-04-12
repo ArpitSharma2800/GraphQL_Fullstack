@@ -4,9 +4,12 @@ const {
 } = require('express-graphql');
 const schema = require('./schema/schema');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const app = express();
 
-mongoose.connect("mongodb+srv://arpit:iluvmuma@arpit-xcm5n.gcp.mongodb.net/test?retryWrites=true&w=majority", {
+app.use(cors());
+
+mongoose.connect("mongodb+srv://arpit:iluvmuma@arpit-xcm5n.gcp.mongodb.net/graph?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
