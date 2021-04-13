@@ -12,17 +12,21 @@ const BOOK_QUERY = gql`
 `;
 
 function BookList() {
-    const { loading, error, data } = useQuery(BOOK_QUERY);
-    if (loading) return 'Loading...';
-    if (error) return `Error! ${error.message}`;
-    console.log(data);
-    return (
-        <div>
-            <ul id="book-list">
-                <li>Book name</li>
-            </ul>
-        </div>
-    );
+  const { loading, error, data } = useQuery(BOOK_QUERY);
+  if (loading) return 'Loading...';
+  if (error) return `Error! ${error.message}`;
+  console.log(data);
+  return (
+    <div>
+      <ul id="book-list">
+        {data.books.map(book => (
+          <li key={book.id}>
+            {book.name}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
 
 export default BookList
