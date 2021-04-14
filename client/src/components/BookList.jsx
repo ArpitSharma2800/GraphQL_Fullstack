@@ -21,7 +21,7 @@ function BookList() {
       <ul id="book-list">
         {data.books.map(book => (
           <li key={book.id}>
-            {book.name}
+            {book.name}, {book.authorId}
           </li>
         ))}
       </ul>

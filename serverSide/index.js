@@ -9,7 +9,7 @@ const app = express();
 
 app.use(cors());
 
-mongoose.connect("mongodb+srv://arpit:iluvmuma@arpit-xcm5n.gcp.mongodb.net/graph?retryWrites=true&w=majority", {
+mongoose.connect("", {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
